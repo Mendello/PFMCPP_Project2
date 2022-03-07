@@ -15,15 +15,13 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+int
+float
+bool
+double
+char
+unsigned int
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -34,6 +32,11 @@ video: Chapter 2 - Part 3
 3) Declare 10 free functions
     each declaration should have a random number of parameters in the function parameter list.
     When naming your parameters, choose names that are relevant to the task implied by the function's name.
+    remember:
+    Name functions what they do
+        takeDogForWalk(int distanceInYards);
+    Name variables what they are.
+        int numStepsSinceStart;
 
 4) add { ignoreUnused( ); } after each declaration in place of the closing semicolon
 5) pass each of your function parameters to the ignoreUnused function like you did in b)
@@ -58,11 +61,28 @@ video: Chapter 2 - Part 3
 void variableDeclarations()
 {
     //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2    
     
-
+    int cars = 4;
+    int coins = -300;
+    int fingers = 5;
+    float height = 16.f;
+    float width = 80.9f;
+    float diff = -20.4f;
+    bool isOpen = true;
+    bool isRed = false;
+    bool moneyAvailable = false;
+    double betterThanFloat = 40.5;
+    double smallNumber = 2E-1;
+    double numberOfBitcoins = 1.4;
+    char space = 'X';
+    char lengthInBit = 8;
+    char bestGrade = 'A';
+    unsigned int maximum = 32;
+    unsigned int onlyPositive = 1;
+    unsigned int whatEver = 50;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, cars, coins, fingers, height, width, diff, isOpen, isRed, moneyAvailable, betterThanFloat, smallNumber, numberOfBitcoins, space, lengthInBit, bestGrade, maximum, onlyPositive, whatEver); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -79,43 +99,80 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int getheight(int upperBound = 5, int lowerBound = 3)
+{
+    ignoreUnused(upperBound, lowerBound);
+    return {};
+}
 /*
  2)
  */
-
+int changeColor(float alpha, int red = 100, int green = 0, int blue = 0)
+{
+    ignoreUnused(alpha, red, green, blue);
+    return {};
+}
 /*
  3)
  */
-
+float getPercentage(float numberA, float numberB)
+{
+    ignoreUnused(numberA, numberB);
+    return {};
+}
 /*
  4)
  */
-
+void sendMessage(bool isRecipientSet = true, bool isSubjectSet = true)
+{
+    ignoreUnused(isRecipientSet, isSubjectSet);
+}
 /*
  5)
  */
-
+double listProperties(int length, int numberOfElements, bool isSorted)
+{
+    ignoreUnused(length, numberOfElements, isSorted);
+    return {};
+}
 /*
  6)
  */
-
+void autopilot(bool isOn = true, bool sensorCheck = true, int systemErrors = 0)
+{
+    ignoreUnused(isOn, sensorCheck, systemErrors);
+}
 /*
  7)
  */
-
+double treeClassification (int numberOfBranches, char typeOfLeafs = 'A', char typeOfBark = 'G')
+{
+    ignoreUnused(numberOfBranches, typeOfLeafs, typeOfBark);
+    return {};
+}
 /*
  8)
  */
-
+unsigned int getIndex(unsigned int end, unsigned int start = 0)
+{
+    ignoreUnused(end, start);
+    return {};
+}
 /*
  9)
  */
-
+bool whichVehicle (int numberOfWheels, bool hasMotor)
+{
+    ignoreUnused(numberOfWheels, hasMotor);
+    return {};
+}
 /*
  10)
  */
-
+void drawPPM(double inputStream = 0xf, double bufferSize = 1024, double frameIndex = 0)
+{
+    ignoreUnused(inputStream, bufferSize, frameIndex);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -136,27 +193,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto height = getheight(3, 6);
     //2)
-    
+    auto color = changeColor(1.5f, 255, 255, 255);
     //3)
-    
+    auto percentage = getPercentage(50.f, 20.3f);
     //4)
-    
+    sendMessage();
     //5)
-    
+    auto list = listProperties(4096, 20, true);
     //6)
-    
+    autopilot();
     //7)
-    
+    auto tree = treeClassification(40, 'F', 'Z');
     //8)
-    
+    auto index = getIndex(0, 128);
     //9)
-    
+    auto bike = whichVehicle(2, true);
     //10)
+    drawPPM();
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, height, color, percentage, list, tree, index, bike);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }

@@ -99,7 +99,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-int getheight(int upperBound = 5, int lowerBound = 3)
+int getHeight(int upperBound = 5, int lowerBound = 3)
 {
     ignoreUnused(upperBound, lowerBound);
     return {};
@@ -138,14 +138,14 @@ double listProperties(int length, int numberOfElements, bool isSorted)
 /*
  6)
  */
-void autopilot(bool isOn = true, bool sensorCheck = true, int systemErrors = 0)
+void startAutopilot(bool isOn = false, bool sensorCheck = true, int systemErrors = 0)
 {
     ignoreUnused(isOn, sensorCheck, systemErrors);
 }
 /*
  7)
  */
-double treeClassification (int numberOfBranches, char typeOfLeafs = 'A', char typeOfBark = 'G')
+double identifyTree (int numberOfBranches, char typeOfLeafs = 'A', char typeOfBark = 'G')
 {
     ignoreUnused(numberOfBranches, typeOfLeafs, typeOfBark);
     return {};
@@ -161,7 +161,7 @@ unsigned int getIndex(unsigned int end, unsigned int start = 0)
 /*
  9)
  */
-bool whichVehicle (int numberOfWheels, bool hasMotor)
+bool getVehicleType (int numberOfWheels, bool hasMotor)
 {
     ignoreUnused(numberOfWheels, hasMotor);
     return {};
@@ -193,7 +193,7 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    auto height = getheight(3, 6);
+    auto height = getHeight(3, 6);
     //2)
     auto color = changeColor(1.5f, 255, 255, 255);
     //3)
@@ -203,13 +203,13 @@ int main()
     //5)
     auto list = listProperties(4096, 20, true);
     //6)
-    autopilot();
+    startAutopilot();
     //7)
-    auto tree = treeClassification(40, 'F', 'Z');
+    auto tree = identifyTree(40, 'F', 'Z');
     //8)
     auto index = getIndex(0, 128);
     //9)
-    auto bike = whichVehicle(2, true);
+    auto bike = getVehicleType(2, true);
     //10)
     drawPPM();
     
